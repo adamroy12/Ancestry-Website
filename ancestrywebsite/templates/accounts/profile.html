@@ -3,7 +3,30 @@
 {% block title %}Your Profile{% endblock %}
 
 {% block content %}
+
 <h1>
-    {{user.username}}'s profile
+    {{ user.get_full_name }} (@{{user.username}})
 </h1>
+
+{% with profile=user.profile %}
+    {% if profile %}
+        <div>
+            <h3>
+            Contact Details:           
+            </h3>
+            Email: {{profile.emailaddress|default:""}}
+            <br/>
+            Phone Number: {{profile.phonenumber|default:"No phone number provided"}}
+        </div>
+        <br/>
+        <div>
+            <h3>
+            Ancestry Details:
+            </h3>
+            {{profile.info|default:"info"}}
+        </div>
+    {% endif %}
+{% endwith %}
+
+
 {% endblock %}
