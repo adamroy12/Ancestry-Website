@@ -1,7 +1,30 @@
+/* navbar */
+#mainNav  {
+    min-height: 3.5rem;
+    background-color: black;
+    opacity: 1;
+}
+
 /* for highlighting the current page in navbar */
-.active {
-    background-color: rgb(66, 66, 66);
-    border-radius: 25px;
+#mainNav .navbar-nav li.nav-item a.nav-link {
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .2s, color .2s;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+    color: white;
+    border-color: white;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+    background: none;
+    color: white;
+    border-color: white;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+    background: none;
+    color: white;
 }
 
 /* main */
@@ -11,6 +34,7 @@
     height: auto;
     min-height: 35rem;
     padding: 74px;
+    padding-top: 104px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../theme/assets/img/bg-masthead.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -18,14 +42,46 @@
     background-size: cover;
 }
 
-@media (min-width: 992px) {
+
+/* headers */
+#main h1, #main .h1 {
+    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.8rem;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+            background-clip: text;
+  }
+  #main h2, #main .h2 {
+    max-width: 20rem;
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) {
+    #main h1, #main .h1 {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+  }
+
+  @media (min-width: 992px) {
     #main {
       height: 100vh;
       padding-top: 104px;
     }
-}
+    #main h1, #main .h1 {
+      font-size: 6.5rem;
+      line-height: 6.5rem;
+      letter-spacing: 0.8rem;
+    }
+    #main h2, #main .h2 {
+      max-width: 30rem;
+      font-size: 1.25rem;
+    }
+  }
 
-/* Tree logo next to navbar-brand */
+/* Tree logo */
 #tree {
     max-width: 40px;
     max-height: 40px;
@@ -36,3 +92,4 @@
     margin-right: auto;
     position: relative; left: -10px; top: -6px;
 }
+
