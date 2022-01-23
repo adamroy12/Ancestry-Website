@@ -1,0 +1,25 @@
+#main {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 74px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/bg-masthead.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+
+@media (min-width: 992px) {
+    #main {
+      height: 100vh;
+      padding-top: 104px;
+    }
+}
+
+
+#mainNav {
+background-color: black;
+}
