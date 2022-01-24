@@ -11,5 +11,3 @@ def blog(request: HttpRequest) -> HttpResponse:
 def about(request: HttpRequest) -> HttpResponse:
     return render(request, 'about.html')
 
-def contact(request: HttpRequest) -> HttpResponse:
-    return render(request, 'contact.html')

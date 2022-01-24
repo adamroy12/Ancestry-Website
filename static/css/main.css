@@ -43,6 +43,28 @@ body {
 }
 }
 
+/* contact page */
+#contact {
+  margin-top: -100px;
+}
+
+@media (min-width: 768px) {
+  #contact {
+    margin-top: -170px
+  }
+  }
+
+  @media (min-width: 992px) {
+    #contact {
+      margin-top: -170px
+    }
+    }
+
+#sendMessageButton {
+  margin-top: -40px;
+}
+
+
 /* headers */
 #main h1, #main .h1 {
     font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -75,7 +97,6 @@ h1, .h1 {
   margin-bottom: 0rem;
 }
 
-
 /* text-styles */
 .text-white-50 {
   font-size: 2vmin;
@@ -86,8 +107,19 @@ h1, .h1 {
 /* navbar */
 #mainNav  {
   min-height: 3.5rem;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   opacity: 1;
+}
+
+#mainNav .navbar-brand {
+  padding: 0.5rem 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#mainNav .nav-link {
+  transition: none;
+  padding: 2rem 1.5rem;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link {
@@ -96,31 +128,40 @@ h1, .h1 {
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: white;
-  border-color: white;
+  color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
   background: none;
-  color: white;
-  border-color: white;
+  color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
   background: none;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 
-/* Tree logo */
+
+/* images */
 #tree {
-    max-width: 40px;
-    max-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 #logo {
-    width: 10%;
-    margin-right: auto;
-    position: relative; left: -10px; top: -6px;
+  width: 10%;
+  margin-right: auto;
+  position: relative; left: -10px; top: -6px;
+}
+
+
+#ian {
+  border-radius: 30%;
+  width: 20%;
+  height: auto;
+  max-width: 250px;
 }
 

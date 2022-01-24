@@ -24,4 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ancestrywebsite.apps.public.urls')),
     path('accounts/', include('ancestrywebsite.apps.accounts.urls')),
+    path('contact/', include('ancestrywebsite.apps.contact.urls')),
     ]

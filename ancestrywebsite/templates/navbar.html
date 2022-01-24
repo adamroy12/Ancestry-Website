@@ -16,7 +16,7 @@
                 <li class="nav-item"><a class="nav-link {% if request.path == index_url %}active{% endif %}" href="{{ index_url }}">Home</a></li>
                 {% url 'public:about' as about_url %}
                 <li class="nav-item"><a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{{ about_url }}">About</a></li>
-                {% url 'public:contact' as contact_url %}
+                {% url 'contact:contact' as contact_url %}
                 <li class="nav-item"><a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a></li>
                 {% url 'public:blog' as blog_url %}
                 <li class="nav-item"><a class="nav-link {% if request.path == blog_url %}active{% endif %}" href="{{ blog_url }}">Blog</a></li>
@@ -42,7 +42,7 @@
     <span>{% if request.path == about_url %}About{% else %}<a href="{{ about_url }}">About</a>{% endif %}</span>
     {% url 'public:blog' as blog_url %}
     <span>{% if request.path == blog_url %}Blog{% else %}<a href="{{ blog_url }}">Blog</a>{% endif %}</span>
-    {% url 'public:contact' as contact_url %}
+    {% url 'contact:contact' as contact_url %}
     <span>{% if request.path == contact_url %}Contact{% else %}<a href="{{ contact_url }}">Contact</a>{% endif %}</span>
     <span style="float:right">
         {% if user.is_authenticated %}
