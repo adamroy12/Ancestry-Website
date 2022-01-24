@@ -20,6 +20,15 @@
                 <li class="nav-item"><a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a></li>
                 {% url 'public:blog' as blog_url %}
                 <li class="nav-item"><a class="nav-link {% if request.path == blog_url %}active{% endif %}" href="{{ blog_url }}">Blog</a></li>
+                    {% if user.is_authenticated %}  
+                        {% url 'accounts:profile' as profile_url %} 
+                        <li class="nav-item"><a class="nav-link {% if request.path == profile_url %}active{% endif %}" href="{{profile_url}}">Profile</a></li>
+                        {% url 'accounts:logout' as logout_url %}
+                        <li class="nav-item"><a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{{logout_url}}">Logout</a></li>
+                    {% else %}  
+                        {% url 'accounts:login' as login_url %}
+                        <li class="nav-item"><a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{{login_url}}">Login</a></li>
+                    {% endif %} 
             </ul>
         </div>
     </div>
