@@ -20,7 +20,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 30px;
-  padding-top: 200px;
+  padding-top: 60px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../theme/assets/img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -32,36 +32,21 @@ body {
 @media (min-width: 768px) {
 #main {
   height: 100vh;
-  padding-top: 300px
+  padding-top: 70px
 }
 }
 
 @media (min-width: 992px) {
 #main {
   height: 100vh;
-  padding-top: 300px
+  padding-top: 110px
 }
 }
-
-/* contact page */
-#contact {
-  margin-top: -100px;
-}
-
-@media (min-width: 768px) {
-  #contact {
-    margin-top: -170px
-  }
-  }
-
-  @media (min-width: 992px) {
-    #contact {
-      margin-top: -170px
-    }
-    }
 
 #sendMessageButton {
   margin-top: -40px;
+  background-color: white;
+  color: black;
 }
 
 
@@ -101,7 +86,7 @@ h1, .h1 {
 .text-white-50 {
   font-size: 2vmin;
   --bs-text-opacity: 1;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 /* navbar */
@@ -157,11 +142,10 @@ h1, .h1 {
   position: relative; left: -10px; top: -6px;
 }
 
-
 #ian {
   border-radius: 30%;
   width: 20%;
   height: auto;
-  max-width: 250px;
+  max-width: 200px;
 }
 
