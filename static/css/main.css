@@ -1,3 +1,18 @@
+
+/* body */
+body {
+  margin: 0;
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--bs-body-color);
+  text-align: auto;
+  background-color: var(--bs-body-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 /* navbar */
 #mainNav  {
     min-height: 3.5rem;
@@ -5,7 +20,6 @@
     opacity: 1;
 }
 
-/* for highlighting the current page in navbar */
 #mainNav .navbar-nav li.nav-item a.nav-link {
     border-bottom: 2px solid transparent;
     transition: border-bottom .2s, color .2s;
@@ -31,55 +45,73 @@
 #main {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100vh;
     min-height: 35rem;
-    padding: 74px;
-    padding-top: 104px;
+    padding: 30px;
+    padding-top: 150px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../theme/assets/img/bg-masthead.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+    text-align: center;
+}
+
+
+@media (min-width: 768px) {
+  #main {
+    height: 100vh;
+    padding-top: 300px
+  }
+}
+
+@media (min-width: 992px) {
+  #main {
+    height: 100vh;
+    padding-top: 400px
+  }
 }
 
 
 /* headers */
 #main h1, #main .h1 {
     font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    letter-spacing: 0.8rem;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    letter-spacing: 0.1rem;
     background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
             background-clip: text;
-  }
-  #main h2, #main .h2 {
-    max-width: 20rem;
-    font-size: 1rem;
-  }
-  @media (min-width: 768px) {
-    #main h1, #main .h1 {
-      font-size: 4rem;
-      line-height: 4rem;
-    }
-  }
+}
+#main h2, #main .h2 {
+  font-size: 1rem;
+}
 
-  @media (min-width: 992px) {
-    #main {
-      height: 100vh;
-      padding-top: 104px;
-    }
-    #main h1, #main .h1 {
-      font-size: 6.5rem;
-      line-height: 6.5rem;
-      letter-spacing: 0.8rem;
-    }
-    #main h2, #main .h2 {
-      max-width: 30rem;
-      font-size: 1.25rem;
-    }
+@media (min-width: 768px) {
+  #main h1, #main .h1 {
+    font-size: 2rem;
+    line-height: 4rem;
   }
+}
+
+@media (min-width: 992px) {
+  #main h1, #main .h1 {
+    font-size: 2rem;
+    line-height: 4rem;
+    letter-spacing: 0.8rem;
+}
+  #main h2, #main .h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* text-styles */
+
+.text-white-50 {
+  --bs-text-opacity: 1;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
 
 /* Tree logo */
 #tree {
