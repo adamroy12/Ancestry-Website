@@ -19,8 +19,10 @@ RUN pip install -r ./requirements/prod.txt
 
 COPY manage.py ./manage.py
 COPY setup.cfg ./setup.cfg
+COPY Makefile ./Makefile
+COPY static ./static
 COPY ancestrywebsite ./ancestrywebsite
-COPY .env ./.env
+
 
 EXPOSE 8000
 
