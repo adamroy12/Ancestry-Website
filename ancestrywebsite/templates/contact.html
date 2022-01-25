@@ -3,6 +3,7 @@
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
+
 <section class="page-section" id="contact">
     <div class="container">
     <!-- Contact Section Heading -->
@@ -47,11 +48,11 @@
                     {% for field in form %}
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                            {{ field.label_tag }}
+                            <label class="text-white-50">{{ field.label_tag }}</label>
                             {{ field }}
 
                             {% for error in field.errors %}
-                            <p class="help-block text-danger">{{error}}</p>
+                            <p class="help-block text-danger text-red-50">{{error}}</p>
                             {% endfor %}
                         </div>
                     </div>
