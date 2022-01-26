@@ -26,4 +26,7 @@ start-server:
 	python manage.py runserver 0.0.0.0:80
 
 helm-deploy:
-	helm upgrade --install django-tutorial ./helm/django-website
+	helm upgrade --install ancestry-website ./helm/django-website
+
+migrate:
+	python manage.py migrate

@@ -60,3 +60,35 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+
+{{- define "django-website.db.env" -}}
+- name: POSTGRES_HOST
+  value: ancestry-website-postgresql
+- name: POSTGRES_DB
+  value: {{ .Values.postgresql.postgresqlDatabase }}
+- name: POSTGRES_USER
+  value: {{ .Values.postgresql.postgresqlUsername }}
+- name: POSTGRES_PASSWORD
+  valueFrom:
+    secretKeyRef:
+        name: ancestry-website-postgresql
+        key: postgresql-password 
+{{- end}}
+
+{{- define "django-website.email.env" -}}
+- name: EMAIL_HOST
+  valueFrom:
+    secretKeyRef:
+      name: emailcred
+      key: emailhost
+- name: EMAIL_HOST_USER
+    secretKeyRef:
+      name: emailcred
+      key: emailhostuser
+- name: EMAIL_HOST_PASSWORD
+  valueFrom:
+    secretKeyRef:
+      name: emailcred
+      key: emailpassword
+{{- end}}
