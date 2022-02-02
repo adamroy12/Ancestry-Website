@@ -83,6 +83,7 @@ Create the name of the service account to use
       name: emailcred
       key: emailhost
 - name: EMAIL_HOST_USER
+  valueFrom:
     secretKeyRef:
       name: emailcred
       key: emailhostuser
