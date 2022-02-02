@@ -8,14 +8,9 @@ x-database-variables: &database-variables
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: postgres
 
-x-email-variables: &email-variables
-  EMAIL_HOST: smtp-relay.sendinblue.com
-  EMAIL_HOST_USER: ianroyalancestry@gmail.com
-  EMAIL_HOST_PASSWORD: secret
 
 x-app-variables: &app-variables
   <<: *database-variables
-  <<: *email-variables
   POSTGRES_HOST: postgres
 
 services:
