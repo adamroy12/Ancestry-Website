@@ -4,17 +4,23 @@ x-service-volumes: &service-volumes
   - ./:/app/:rw,cached
 
 x-database-variables: &database-variables
-  POSTGRES_DB: ${POSTGRES_DB}
-  POSTGRES_USER: ${POSTGRES_USER}
-  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  POSTGRES_DB: postgres
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+
+x-email-variables: &email-variables
+  EMAIL_HOST: smtp-relay.sendinblue.com
+  EMAIL_HOST_USER: ianroyalancestry@gmail.com
+  EMAIL_HOST_PASSWORD: secret
 
 x-app-variables: &app-variables
   <<: *database-variables
-  POSTGRES_HOST: ${POSTGRES_HOST}
+  <<: *email-variables
+  POSTGRES_HOST: postgres
 
 services:
   website:
-    image: ancestrywebsite:latest
+    image: ancestry-website:latest
     command: python manage.py runserver 0.0.0.0:8080
     volumes: *service-volumes
     environment: *app-variables
@@ -24,7 +30,7 @@ services:
       - "8080:8080"
 
   db_migrate:
-    image: ancestrywebsite:latest
+    image: ancestry-website:latest
     command: python manage.py migrate
     volumes: *service-volumes
     environment: *app-variables
