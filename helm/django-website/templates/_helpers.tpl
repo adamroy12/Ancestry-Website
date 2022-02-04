@@ -62,24 +62,24 @@ Create the name of the service account to use
 {{- end }}
 
 
-POSTGRES_HOST = os.environ.get('POSTGRES_HOST', default="")
-POSTGRES_DB = os.environ.get('POSTGRES_DB', default="")
-POSTGRES_USER = os.environ.get('POSTGRES_USER', default="")
-POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD', default="")
+# POSTGRES_HOST = os.environ.get('POSTGRES_HOST', default="")
+# POSTGRES_DB = os.environ.get('POSTGRES_DB', default="")
+# POSTGRES_USER = os.environ.get('POSTGRES_USER', default="")
+# POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD', default="")
 
 
 {{- define "django-website.db.env" -}}
 - name: POSTGRES_HOST
   value: ancestry-website-postgresql
 - name: POSTGRES_DB
-  value: {{ .Values.postgresql.postgresqlDatabase }}
+  value: {{ .Values.global.postgresql.postgresqlUsername }}
 - name: POSTGRES_USER
-  value: {{ .Values.postgresql.postgresqlUsername }}
+  value: {{ .Values.global.postgresql.postgresqlDatabase }}
 - name: POSTGRES_PASSWORD
   valueFrom:
     secretKeyRef:
         name: ancestry-website-postgresql
-        key: postgresql-password 
+        key: postgres-password
 {{- end}}
 
 {{- define "django-website.email.env" -}}
